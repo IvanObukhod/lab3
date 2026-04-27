@@ -8,8 +8,8 @@ public:
     void setTolerance(double eps);
     double calcValueFunction(double x);
     double derivate(double x);
-    double calcRoot();
-    double alternativeCalcRoot();
+    double dichotomy();
+    double newtonsMethod();
 private:
     double a, b, eps;
 };

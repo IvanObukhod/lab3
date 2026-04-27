@@ -1,11 +1,8 @@
-#include "Dyhotomia_class.h"
+#include "equation_class.h"
 #include "cmath"
-#include <iostream>
-
-using namespace std;
 
 Dyhotomia_class::Dyhotomia_class(double a, double b, double eps){
-    this->a = a;
+    this->a = a; 
     this->b = b;
     this->eps = eps;
 }
@@ -27,7 +24,7 @@ double Dyhotomia_class::derivate(double x){
     return (calcValueFunction(x + eps) - calcValueFunction(x)) / eps;
 }
 
-double Dyhotomia_class::alternativeCalcRoot(){
+double Dyhotomia_class:: newtonsMethod(){
     if(calcValueFunction(a) * calcValueFunction(b) > 0){
         return NAN;
     }
@@ -42,7 +39,7 @@ double Dyhotomia_class::alternativeCalcRoot(){
     return x;
 }
 
-double Dyhotomia_class::calcRoot(){
+double Dyhotomia_class::dichotomy(){
     double a = this->a;
     double b = this->b;
     if(calcValueFunction(a) * calcValueFunction(b) > 0){
